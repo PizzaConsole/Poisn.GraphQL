@@ -61,8 +61,6 @@ namespace Poisn.GraphQL.Server
                     .AddDataLoader()
                     .AddGraphTypes(typeof(DemoSchema));
 
-            services.Configure<KestrelServerOptions>(options => options.AllowSynchronousIO = true);
-            services.Configure<IISServerOptions>(options => options.AllowSynchronousIO = true);
             services.AddDefer();
             services.AddHttpScope();
 
