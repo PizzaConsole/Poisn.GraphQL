@@ -46,12 +46,10 @@ namespace Poisn.GraphQL.Client
                     if (servicetype != null)
                     {
                         builder.Services.AddScoped(servicetype, implementationtype); // traditional service interface
-                        Console.WriteLine(servicetype.FullName);
                     }
                     else
                     {
                         builder.Services.AddScoped(implementationtype, implementationtype); // no interface defined for service
-                        Console.WriteLine(implementationtype.FullName);
                     }
                 }
             }

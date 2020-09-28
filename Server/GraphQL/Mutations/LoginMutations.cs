@@ -1,4 +1,6 @@
-﻿using GraphQL.Types;
+﻿using GraphQL;
+using GraphQL.Server.Common;
+using GraphQL.Types;
 using Poisn.GraphQL.Server.Context;
 using Poisn.GraphQL.Server.GraphQL.Types;
 using Poisn.GraphQL.Shared.Entities;
@@ -15,9 +17,9 @@ namespace Poisn.GraphQL.Server.GraphQL.Mutations
         public LoginMutation(Defer<IStore> store)
         {
             Field<UserGraphType>(
-              "login",
+              "userLogin",
               arguments: new QueryArguments(
-                new QueryArgument<NonNullGraphType<LoginInputType>> { Name = "human" }
+                new QueryArgument<NonNullGraphType<LoginInputType>> { Name = "credentials" }
               ),
               resolve: context =>
               {

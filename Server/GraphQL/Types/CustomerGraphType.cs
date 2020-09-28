@@ -12,7 +12,7 @@ namespace Poisn.GraphQL.Server.GraphQL.Types
         public UserGraphType()
         {
             Name = nameof(User);
-            Field(x => x.Id, type: typeof(IdGraphType)).Description("User Id");
+            Field(x => x.Id).Description("User Id");
             Field(x => x.Username).Description("User's Username");
         }
     }

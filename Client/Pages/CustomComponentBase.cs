@@ -6,6 +6,7 @@ using Poisn.GraphQL.Client.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Poisn.GraphQL.Client.Pages
@@ -16,6 +17,8 @@ namespace Poisn.GraphQL.Client.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [Inject]
         protected NavigationManager NavigationManager { get; set; }
+        [Inject]
+        protected HttpClient HttpClient { get; set; }
 
         [Inject]
         protected IServiceProvider ServiceProvider { get; set; }
