@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace Poisn.GraphQL.Server.GraphQL.Types
 {
-    internal class CustomerGraphType : ObjectGraphType<Customer>
+    internal class UserGraphType : ObjectGraphType<User>
     {
-        public CustomerGraphType()
+        public UserGraphType()
         {
-            Name = "Customer";
-            Field(x => x.Id, type: typeof(IdGraphType)).Description("Customer Id");
-            Field(x => x.FirstName, nullable: true).Description("Customer's First Name");
-            Field(x => x.LastName, nullable: true).Description("Customer's Last Name");
-            Field(x => x.Contact, nullable: true).Description("Customer's Contact");
-            Field(x => x.Email, nullable: true).Description("Customer's Email");
+            Name = nameof(User);
+            Field(x => x.Id, type: typeof(IdGraphType)).Description("User Id");
+            Field(x => x.Username).Description("User's Username");
         }
     }
 }

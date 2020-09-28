@@ -15,5 +15,6 @@ namespace Poisn.GraphQL.Server.Context
         }
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

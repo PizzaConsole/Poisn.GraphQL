@@ -1,6 +1,7 @@
 ﻿using GraphQL.Types;
 using GraphQL.Utilities;
 using Poisn.GraphQL.Server.Context;
+using Poisn.GraphQL.Server.GraphQL.Mutations;
 using Poisn.GraphQL.Server.GraphQL.Queries;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Poisn.GraphQL.Server.GraphQL
         public DemoSchema(IServiceProvider provider) : base(provider)
         {
             Query = provider.GetRequiredService<CustomerQuery>();
+            Mutation = provider.GetRequiredService<LoginMutation>();
         }
     }
 }

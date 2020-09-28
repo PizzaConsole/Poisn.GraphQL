@@ -9,5 +9,6 @@ namespace Poisn.GraphQL.Shared.Entities
         public int Id { get; set; }
         public string Username { get; set; }
         public bool IsAuthenticated { get; set; }
+        public string Password { get; set; }
     }
 }
