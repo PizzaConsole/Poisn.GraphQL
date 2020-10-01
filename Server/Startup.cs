@@ -39,10 +39,13 @@ namespace Poisn.GraphQL.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Db Connection is in appsettings.json
+            // this adds in EF Core Db
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Scoped);
 
+            // this add in YesSql Db
             services.AddDbProvider(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -61,6 +64,7 @@ namespace Poisn.GraphQL.Server
                     .AddDataLoader()
                     .AddGraphTypes(typeof(DemoSchema));
 
+            // this is used to use DI in GraphQl for scoped services
             services.AddDefer();
             services.AddHttpScope();
 
