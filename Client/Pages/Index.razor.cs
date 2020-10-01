@@ -41,7 +41,7 @@ namespace Poisn.GraphQL.Client.Pages
 
             var graphQLResponse = await graphQLClient.SendMutationAsync(heroRequest, () => new { userLogin = new User() });
 
-            var personName = graphQLResponse.Data.userLogin;
+            var personName = graphQLResponse.Data?.userLogin;
 
             var options = new JsonSerializerOptions
             {
