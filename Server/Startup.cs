@@ -87,7 +87,11 @@ namespace Poisn.GraphQL.Server
             app.UseWebSockets();
             app.UseGraphQLWebSockets<ISchema>();
             app.UseGraphQL<ISchema>();
+
+            // ui/graphiql
             app.UseGraphiQLServer();
+
+            // ui/playground
             app.UseGraphQLPlayground();
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
